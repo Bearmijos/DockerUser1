@@ -5,15 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
-      - name: Build & Push to Docker Hub
-        uses: Bearmijos/action-docker-dockerhub@master
-        with:
-          args: --docker
-        env:
-          USERNAME: '123'
-          PASSWORD: 'abc'
-          TAG_NAME: "v0.0.1"
-          BUILDX: "true"
       - name: Hello world action step
         id: hello
         uses: Bearmijos/Dockerhub3@main
