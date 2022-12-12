@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: Bearmijos/Dockerhub3@main
+        uses: Bearmijos/Dockerhub3@v3
         with:
           who-to-greet: 'Mona the Octocatss'
       # Use the output from the `hello` step
