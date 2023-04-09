@@ -33,7 +33,7 @@ jobs:
     - name: Echos
       run: |
         echo ${{ runner.temp }}
-        find /home/runner/work/_temp/codeql_databases/javascript/results/codeql
+        find /home/runner/work/_temp/codeql_databases
         
     - name: Find CodeQL
       run: |
