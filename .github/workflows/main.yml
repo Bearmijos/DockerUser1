@@ -1,11 +1,8 @@
 name: "CodeQL action"
-
 on:
   push
-
 env:
   CODEQL_ACTION_TESTING_ENVIRONMENT: codeql-action-pr-checks
-
 jobs:
   build:
     strategy:
@@ -13,7 +10,6 @@ jobs:
       matrix:
         language: [javascript]
     runs-on: ubuntu-latest
-
 
     steps:
     - name: Checkout
@@ -37,6 +33,7 @@ jobs:
     - name: Echos
       run: |
         echo ${{ runner.temp }}
+        find ${{ runner.temp }}
         
     - name: Find CodeQL
       run: |
