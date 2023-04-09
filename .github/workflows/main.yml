@@ -44,4 +44,11 @@ jobs:
       with:
         name: javascript-sarif
         path: ${{ runner.temp }}/codeql/javascript.sarif
+        
+    - name: CodeQL Scan as artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: javascript-csv
+        path: results.csv
+    
 
