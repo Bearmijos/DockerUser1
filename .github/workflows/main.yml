@@ -20,6 +20,8 @@ jobs:
       id: init
       with:
         languages: javascript
+    - name: Autobuild
+      uses: github/codeql-action/autobuild@v2
 
     # confirm steps.init.outputs.codeql-path points to the codeql binary
     - name: Print CodeQL Version
