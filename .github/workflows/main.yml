@@ -1,7 +1,7 @@
 name: "CodeQL action"
 
 on:
-  workflow_dispatch
+  push
 
 env:
   CODEQL_ACTION_TESTING_ENVIRONMENT: codeql-action-pr-checks
@@ -32,8 +32,12 @@ jobs:
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v2
       with:
-        upload: false
         output: ${{ runner.temp }}/codeql
+    
+    - name: Echos
+      run: |
+        echo ${{ runner.temp }}
+        
     - name: Find CodeQL
       run: |
         export CODEQL_PATH=$(find /opt/hostedtoolcache/CodeQL -name codeql | head -n 1)
