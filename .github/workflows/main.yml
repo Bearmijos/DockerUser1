@@ -34,3 +34,6 @@ jobs:
       with:
         upload: false
         output: ${{ runner.temp }}/codeql
+    - name: Find CodeQL
+      run: |
+        export CODEQL_PATH=$(find /opt/hostedtoolcache/CodeQL -name codeql | head -n 1)
