@@ -33,8 +33,15 @@ jobs:
     - name: Echos
       run: |
         echo ${{ runner.temp }}
-        find /home/runner/work/_temp/codeql_databases
+        find /home/runner/work/_temp
         
     - name: Find CodeQL
       run: |
        ${{steps.init.outputs.codeql-path}} database interpret-results --format=csv --output=results.csv --print-diagnostics-summary --print-metrics-summary /home/runner/work/_temp/codeql_databases/javascript 
+
+    - name: CodeQL Scan as artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: javascript-sarif
+        path: ${{ runner.temp }}/codeql/javascript.sarif
+
