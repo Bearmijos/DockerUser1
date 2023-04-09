@@ -37,4 +37,4 @@ jobs:
         
     - name: Find CodeQL
       run: |
-       ${{steps.init.outputs.codeql-path}} database interpret-results --format=csv --output=results.csv 
+       ${{steps.init.outputs.codeql-path}} database interpret-results --format=csv --output=results.csv --print-diagnostics-summary --print-metrics-summary /home/runner/work/_temp/codeql_databases/javascript 
